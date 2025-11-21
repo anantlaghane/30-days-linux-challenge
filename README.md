@@ -61,7 +61,7 @@ This automation is helpful for DevOps engineers to streamline onboarding in Linu
 ---
 
 
-#"Day 2 — Linux Hardening Automation (Security Project)"
+# "Day 2 — Linux Hardening Automation (Security Project)"
 
 description: >
   This script automates essential Linux security hardening tasks to protect
