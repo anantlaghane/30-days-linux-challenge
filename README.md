@@ -57,28 +57,3 @@ This automation is helpful for DevOps engineers to streamline onboarding in Linu
 
 ## ✨ Author  
 **Anant laghane 
-
-
-🧑‍💻 Day 1 — User Onboarding Automation (Linux Project)
-This script automates the complete onboarding process for a new Linux user.
-
-🚀 Features Implemented
-✔ Create a new Linux user
-✔ Set password interactively
-✔ **Strong password enforcement** (8+ chars, 1 uppercase, 1 number)
-✔ Configure account expiry
-✔ Add SSH Public Key for passwordless authentication
-✔ Generate audit logs
-✔ Error handling included
-✔ Input validation for username and SSH key
-
-📂 Project Structure
-day01_user_onboarding/
-│── user_onboarding.sh
-│── user_onboarding.log
-│── README.md
-
-🛠️ How It Works
-1️⃣ Run Script
-```bash
-sudo ./user_onboarding.sh
