@@ -62,7 +62,7 @@ This automation is helpful for DevOps engineers to streamline onboarding in Linu
 ---
 ---
 
-##📌 Day 2 – Linux Hardening (User, SSH & System Security)
+#📌 Day 2 – Linux Hardening (User, SSH & System Security)
 
 This module contains two automated shell scripts:
 
