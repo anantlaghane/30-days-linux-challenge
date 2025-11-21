@@ -62,85 +62,86 @@ This automation is helpful for DevOps engineers to streamline onboarding in Linu
 ---
 ---
 
-#📌 Day 2 – Linux Hardening (User, SSH & System Security)
+🛡️ Day 2 — Linux Hardening Automation (Security Project)
 
-This module contains two automated shell scripts:
+This script automates essential Linux security hardening tasks to protect the system from unauthorized access and enforce strong security policies.
 
-1️⃣ linux_hardening.sh (Main Hardening Script)
+🚀 Features Implemented
 
-This script performs essential Linux security hardening:
+✔ Disable root SSH login
+✔ Disable password-based SSH authentication
+✔ Enforce key-based authentication
+✔ Create a secure sudo user
+✔ Apply strong password policies (PAM)
+✔ SSH timeout configuration
+✔ Enable UFW firewall
+✔ Disable unused services
+✔ Automatic backup of config files
+✔ Undo (rollback) support
+✔ Generate logs for every change
 
-🔐 Security Enhancements Done
+📂 Project Structure
+day02_linux_hardening/
+│── linux_hardening.sh
+│── hardening_undo.sh
+│── backup/
+│── README.md
 
-Disables root SSH login
-
-Disables password-based SSH login
-
-Enables only key-based authentication
-
-Sets strong password policies
-
-Creates a new secure sudo user
-
-Configures SSH timeout & restrictions
-
-Firewall (UFW) configuration
-
-Disables unwanted services
-
-System update + upgrade
-
-Log & monitoring improvements
-
-2️⃣ hardening_undo.sh (Rollback Script)
-
-This script reverses the changes made by the hardening script:
-
-🔄 Undo Actions
-
-Re-enable root SSH login
-
-Re-enable password authentication
-
-Remove SSH timeout
-
-Restore default SSH config
-
-Remove created sudo user (optional)
-
-Re-enable services
-
-Rollback UFW rules
-
-Reset password policy
-
-Restore backups created during hardening
-
-📁 How to Run
-▶️ Run Hardening
-chmod +x linux_hardening.sh
+🛠️ How It Works
+1️⃣ Run Hardening Script
 sudo ./linux_hardening.sh
 
-⏪ Undo Hardening
-chmod +x hardening_undo.sh
+Script Performs:
+
+Creates backup folder
+
+Disables root login
+
+Disables password login → enables SSH key authentication
+
+Configures SSH timeout
+
+Sets password complexity
+
+Sets up UFW firewall
+
+Creates secure sudo user
+
+Logs all actions
+
+2️⃣ Run Undo Script (Rollback)
+
+If you want to revert all security changes:
+
 sudo ./hardening_undo.sh
 
-📝 Notes
 
-Always test on a VM before applying on production.
+The undo script restores:
 
-Both scripts create a backup automatically:
+Default SSH configuration
 
-/backup/hardening-backup-<date>/
+Root login access
 
+Password authentication
 
-Undo script uses this backup to restore original configuration files.
+Original firewall state
 
-📌 Deliverables for Day 2
+Default password policy
 
-linux_hardening.sh
+Removes optional secure user
 
-hardening_undo.sh
-     
+📄 Log File Example
+2025-11-21 14:52:10 : Backup created at /backup/hardening-2025-11-21
+2025-11-21 14:52:12 : Root SSH login disabled.
+2025-11-21 14:52:13 : Password authentication disabled.
+2025-11-21 14:52:14 : SSH idle timeout enabled.
+2025-11-21 14:52:15 : Secure user 'secureadmin' created.
+2025-11-21 14:52:17 : UFW firewall enabled.
 
-   
+🎯 Purpose
+
+This automation helps DevOps engineers quickly apply industry-standard Linux hardening, improve server security, prevent brute-force attacks, enforce password rules, and maintain system compliance.
+
+✨ Author
+
+Anant Laghane
