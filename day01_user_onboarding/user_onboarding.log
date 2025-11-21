@@ -8,3 +8,15 @@
 2025-11-20 16:30:09 : SSH key added for jitu1.
 2025-11-20 16:30:09 : User 'jitu1' onboarding completed.
 2025-11-21 01:04:30 : Error: User 'jitu' already exists.
+2025-11-21 01:22:42 : Error: User 'jitu' already exists.
+2025-11-21 01:23:01 : Error: User 'jitu' already exists.
+2025-11-21 01:23:17 : User 'akash' created.
+2025-11-21 01:23:40 : Error: Invalid expiry date!
+2025-11-21 01:25:15 : User 'raju' created.
+2025-11-21 01:30:35 : Error: User 'akash' already exists.
+2025-11-21 01:30:53 : User 'krushna' created.
+2025-11-21 01:31:54 : Error: Username cannot be empty!
+2025-11-21 01:32:08 : Error: User 'krushna' already exists.
+2025-11-21 01:32:32 : User 'john' created.
+2025-11-21 01:33:08 : Password set for john.
+2025-11-21 01:33:24 : Error: Invalid expiry date!
