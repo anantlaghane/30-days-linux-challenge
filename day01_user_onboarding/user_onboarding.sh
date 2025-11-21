@@ -32,12 +32,27 @@ add_user() {
     fi
     log "User '$username' created."
 
-    # Set password
-    echo "Set password for $username:"
-    if ! sudo passwd "$username"; then
-        log "Error: Failed to set password."
-        exit 1
-    fi
+     # Set password with strong validation
+    while true; do
+        read -s -p "Set password for $username: " password
+        echo
+        read -s -p "Retype password: " password2
+        echo
+
+        if [[ "$password" != "$password2" ]]; then
+            echo "Passwords do not match! Try again."
+            continue
+        fi
+
+        if [[ ${#password} -lt 8 || ! "$password" =~ [A-Z] || ! "$password" =~ [0-9] ]]; then
+            echo "Password must be at least 8 characters, include 1 uppercase letter and 1 number."
+            continue
+        fi
+
+        echo "$username:$password" | sudo chpasswd
+        log "Password set for $username."
+        break
+    done
 
     # Expiry date
     read -p "Enter account expiry date (YYYY-MM-DD): " expiry
