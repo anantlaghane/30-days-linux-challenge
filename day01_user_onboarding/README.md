@@ -65,4 +65,4 @@ This automation is helpful for DevOps engineers to streamline onboarding in Linu
 
 
 
-![Linux Hardening Automation](./Screenshot 2025-11-20 220025.png)
+![Linux Hardening Automation](./day01_01)
