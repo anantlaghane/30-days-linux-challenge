@@ -37,7 +37,7 @@ Zombie processes
 
 Any services that failed
 ---
-## 📄 Sample Output
+📄 Sample Output
 =============================
   SYSTEM HEALTH REPORT
 =============================
