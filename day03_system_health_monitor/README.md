@@ -57,6 +57,6 @@ Zombie Process : 0
 
 This tool helps Linux administrators and DevOps engineers quickly analyze system health in real-time using a single script.
 
-![System Health Output](./day03_system_health_monitor/day03_01.png)
-![System Health Output](./day03_system_health_monitor/day03_02.png)
-![System Health Output](./day03_system_health_monitor/day03_03.png)
+![System Health Output](./day03_01.png)
+![System Health Output](./day03_02.png)
+![System Health Output](./day03_03.png)
