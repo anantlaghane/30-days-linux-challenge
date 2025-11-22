@@ -19,11 +19,11 @@ day03_system_health_monitor/
 │── README.md
 ---
 ## 🛠️ How It Works
-## 1️⃣ Run Script
+ 1️⃣ Run Script
 chmod +x system_health_monitor.sh
 ./system_health_monitor.sh
 
-## 2️⃣ What It Shows:
+ 2️⃣ What It Shows:
 
 CPU usage %
 
@@ -49,10 +49,10 @@ Load Average   : 0.42 0.37 0.30
 
 Zombie Process : 0
 
-## ⚠️ Failed Services:
+ ⚠️ Failed Services:
 - apache2.service
 - snapd.service
----
+
 ## 🎯 Purpose
 
 This tool helps Linux administrators and DevOps engineers quickly analyze system health in real-time using a single script.
