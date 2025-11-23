@@ -21,6 +21,7 @@ Ye Linux sysadmin aur DevOps role dono ke liye ek real-world automation task hai
 ---
 
 # ASCII Architecture Diagram
+
           ┌─────────────────────────┐
           │   Service Auto-Heal     │
           │       Script            │
@@ -43,6 +44,11 @@ Ye Linux sysadmin aur DevOps role dono ke liye ek real-world automation task hai
    ┌───────────────────────┐
    │ Log alert to logfile  │
    └───────────────────────┘
+
+
+   
+
+   ---
 
    ![Server Auto-Heal Script](./day04.png)
 
