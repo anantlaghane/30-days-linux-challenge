@@ -15,3 +15,35 @@ Ye Linux sysadmin aur DevOps role dono ke liye ek real-world automation task hai
 ✔ Logs everything in `/var/log/auto_heal.log`  
 ✔ Supports Email alert (optional)  
 ✔ Works with any service like Apache, Nginx, MySQL, Docker, etc.
+
+---
+---
+---
+
+# ASCII Architecture Diagram
+          ┌─────────────────────────┐
+          │   Service Auto-Heal     │
+          │       Script            │
+          └──────────┬──────────────┘
+                     │
+      ┌──────────────┴────────────────┐
+      │ Checks service status (loop)  │
+      └──────────────┬────────────────┘
+                     │
+     ┌───────────────┴───────────────┐
+     │  Is service DOWN / FAILED ?   │
+     └───────┬──────────────┬────────┘
+             │ Yes          │ No
+             ▼              ▼
+   ┌─────────────────┐   Continue  
+   │ Restart service │   Monitoring
+   └─────────────────┘
+             │
+             ▼
+   ┌───────────────────────┐
+   │ Log alert to logfile  │
+   └───────────────────────┘
+
+   ![Server Auto-Heal Script](./day04.png)
+
+
