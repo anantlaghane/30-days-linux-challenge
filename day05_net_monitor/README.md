@@ -24,9 +24,9 @@ The script analyses web server logs and detects key security patterns.
 | Bash | Automation |
 
 ---
+![User Onboarding Automation](./day05.png) 
 
 ## 🚀 Usage
 ```bash
 sudo ./log_analyzer.sh /var/log/nginx/access.log
 
-![User Onboarding Automation](./day05.png) 
