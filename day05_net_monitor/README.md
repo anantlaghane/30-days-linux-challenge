@@ -1,4 +1,4 @@
-# 🛠 Day 05 — Advanced Log Analyzer (30-Day Linux Project)
+# 🛠 Day 05 — Advanced Log Analyzer
 
 The script analyses web server logs and detects key security patterns.
 
