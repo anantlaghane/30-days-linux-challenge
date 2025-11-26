@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-11-26_152957",
+  "active_connections": "0",
+  "top_external_ips": "      1 Address;",
+  "port_usage": "      3 53;      2 80;      2 25;      2 22;      1 8085;",
+  "bandwidth_rx_kb_s": "0",
+  "bandwidth_tx_kb_s": "0"
+}
