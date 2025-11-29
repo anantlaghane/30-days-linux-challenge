@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Mehfil Makers — Premium Event Management</title>
+
+<style>
+/* ==================== ROOT COLORS ==================== */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#d4af37;
+  --muted:#9aa6b2;
+  --glass: rgba(255,255,255,0.04);
+  --radius:14px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#071025 0%, #071827 60%);
+  color:#e6eef6;
+  line-height:1.5;
+}
+a{text-decoration:none;color:inherit}
+
+/* ==================== responsive mobile  ==================== */
+/* Brand section */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-text .title {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.brand-text .location {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* MOBILE RESPONSIVE FIX */
+@media(max-width: 900px){
+    nav.nav-links { display:none; }
+    .mobile-menu { display:block; }
+
+    header {
+        padding: 12px 16px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .brand-text .title {
+        font-size: 15px;
+    }
+
+    .brand-text .location {
+        font-size: 10px;
+    }
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* MOBILE MENU BUTTON */
+.mobile-menu {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+/* Mobile dropdown */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #0f1724;
+  padding: 14px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+}
+
+.mobile-nav a {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.mobile-nav.show {
+  display: flex;
+}
+
+/* Responsive */
+@media(max-width: 900px){
+  .nav-links { display: none; }
+  .mobile-menu { display: block; }
+}
+
+
+/* ==================== HEADER ==================== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  width:85px;
+  height:85px;
+  overflow:hidden;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.logo img{
+  width:100%;height:100%;object-fit:cover;
+}
+
+nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+nav a{
+  padding:8px 12px;
+  color:var(--muted);
+  font-weight:600;
+}
+nav a.cta{
+  background:var(--accent);
+  color:#071022;
+  border-radius:10px;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero{
+  position:relative;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.hero video{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  object-fit:cover;
+  z-index:-1;
+}
+.hero-overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;left:0;
+  background:rgba(0,0,0,0.5);
+}
+
+.btn{padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer}
+.primary{background:var(--accent);color:#071022}
+.ghost{border:1px solid rgba(255,255,255,0.1);color:var(--muted)}
+
+.badge{
+  background:var(--glass);
+  padding:8px 12px;
+  border-radius:10px;color:var(--muted)
+}
+
+/* ==================== CARDS & SECTIONS ==================== */
+section{padding:48px 8%}
+.section-title{display:flex;align-items:center;gap:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:var(--glass);padding:18px;border-radius:12px}
+
+/* ==================== GALLERY ==================== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+.gallery img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  transition:0.3s;
+}
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* ==================== ABOUT ==================== */
+.about{display:flex;gap:24px;align-items:center}
+.about .stat{background:var(--card);padding:18px;border-radius:12px;text-align:center}
+
+/* ==================== CONTACT SECTION ==================== */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:32px;
+}
+
+.contact-form{
+  background:rgba(255,255,255,0.04);
+  padding:24px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.06);
+  backdrop-filter:blur(6px);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:12px 14px;
+  border-radius:10px;
+  color:#fff;
+  font-size:15px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 8px rgba(212,175,55,0.4);
+}
+
+/* ==================== INSTAGRAM BUTTON & CARD ==================== */
+.insta-btn{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:linear-gradient(135deg,#d4af37,#f6e27a);
+  padding:12px 18px;
+  color:#071022;
+  border-radius:10px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.insta-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+}
+.insta-card img{
+  width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)
+}
+
+/* ==================== FOOTER ==================== */
+footer{
+  padding:28px 8%;
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+}
+
+/* ==================== WHATSAPP BUTTON ==================== */
+.whatsapp{
+  position:fixed;right:22px;bottom:22px;
+  background:#25d366;width:56px;height:56px;
+  border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:26px;
+}
+
+/* ==================== RESPONSIVE FIXES ==================== */
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:768px){
+  header{padding:16px 20px}
+  .brand{width:100%;justify-content:center;text-align:center}
+  nav{width:100%;justify-content:space-around;margin-top:10px}
+  .hero h1{font-size:32px!important}
+}
+
+@media(max-width:520px){
+  .gallery img{height:150px}
+}
+</style>
+
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+
+
+<header>
+    <div class="brand">
+        <div class="logo">
+            <img src="logo1.png" />
+        </div>
+
+        <div class="brand-text">
+            <div class="title">The Mehfil Makers</div>
+            <div class="location">Amravati • Pune • Mumbai</div>
+        </div>
+    </div>
+
+    <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Book Now</a>
+    </nav>
+
+    <div class="mobile-menu" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</header>
+
+
+<!-- Mobile Dropdown -->
+<div id="mobileNav" class="mobile-nav">
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById("mobileNav").classList.toggle("show");
+}
+</script>
+
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <div style="padding:80px;position:relative;z-index:2;">
+    <h1 style="font-size:48px;font-weight:800;max-width:600px;">
+      We Manage <span style="color:var(--accent)">Exclusive Events</span><br>
+      For Exceptional People
+    </h1>
+
+    <p class="muted" style="max-width:520px;font-size:18px;margin-top:14px;">
+      Turning Celebrations into Unforgettable Experiences.
+    </p>
+
+    <div style="margin-top:25px;display:flex;gap:12px;">
+      <a href="#contact" class="btn primary">Get Free Quote</a>
+      <a href="#gallery" class="btn ghost">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section id="services">
+  <div class="section-title"><h2>Our Services</h2></div>
+
+  <div class="cards">
+    <div class="card"><h3>Weddings</h3><p class="muted">Decor, catering, mandap, photography.</p></div>
+    <div class="card"><h3>Birthday Parties</h3><p class="muted">Theme setups, activities, cake design.</p></div>
+    <div class="card"><h3>Corporate Events</h3><p class="muted">Launches, conferences, award ceremonies.</p></div>
+    <div class="card"><h3>Private Events</h3><p class="muted">Anniversary, house party, special gatherings.</p></div>
+    <div class="card"><h3>Concert Events</h3><p class="muted">Music concert ,public concert, College concert.</p></div>
+
+  </div>
+</section>
+
+<!-- ==================== GALLERY ==================== -->
+<section id="gallery">
+  <div class="section-title"><h2>Gallery — Recent Events</h2></div>
+
+  <div class="gallery">
+    <img src="i1.jpg">
+    <img src="i2.jpg">
+    <img src="i3.jpg">
+    <img src="i4.jpg">
+    <img src="i5.jpg">
+    <img src="i6.jpg">
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about">
+  <div class="section-title"><h2>About Us</h2></div>
+
+  <div class="about">
+    <div class="text">
+      <p class="muted">
+        We are passionate event creators bringing dreams to life with elegant 
+        themes, stunning decor & trusted vendor partners.
+      </p>
+      <ul class="muted">
+        <li>100+ Events Successfully Delivered</li>
+        <li>Dedicated Team for Each Event</li>
+        <li>Premium Designs & Custom Themes</li>
+      </ul>
+    </div>
+
+    <div style="width:320px;">
+      <div class="stat"><div style="font-size:22px;font-weight:800">100+</div><div class="muted">Events</div></div>
+      <div class="stat"><div style="font-size:22px;font-weight:800">100%</div><div class="muted">Client Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact">
+  <div class="section-title"><h2>Contact & Booking</h2></div>
+
+  <div class="contact-grid">
+
+    <!-- Left -->
+    <div>
+      <h3>Contact Manager</h3>
+      <p><strong>VIDHI WANKHADE</strong></p>
+
+      <p class="muted"><i class="fa-solid fa-phone"></i> +91 8799894801</p>
+      <p class="muted"><i class="fa-solid fa-envelope"></i> vidhiwankhade09@gmail.com</p>
+      <p class="muted"><i class="fa-solid fa-location-dot"></i> Amravati • Pune • Mumbai</p>
+
+      <h4>Instagram</h4>
+
+      <a href="https://www.instagram.com/the_mehfil_makers_/" class="insta-btn" target="_blank">
+        <i class="fa-brands fa-instagram"></i> Follow Us on Instagram
+      </a>
+
+      <div class="insta-card">
+        <img src="logo1.png">
+        <div class="username">@the_mehfil_makers_</div>
+        <div class="followers">2.4k+ Followers</div>
+        <a href="https://www.instagram.com/the_mehfil_makers_/" class="follow-btn" target="_blank">Follow Now</a>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      
+      <input type="hidden" name="access_key" value="648a1925-4326-482c-a63f-cad03413b261">
+      <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+      <label>Your Name</label>
+      <input type="text" name="name" placeholder="John Doe" required>
+
+      <label>Email</label>
+      <input type="email" name="email" placeholder="you@example.com" required>
+
+      <label>Phone Number</label>
+      <input type="tel" name="phone" placeholder="+91 00000 00000" required>
+
+      <label>Event Type</label>
+      <input type="text" name="event" placeholder="Wedding / Birthday / Corporate" required>
+
+      <label>Your Message</label>
+      <textarea name="message" rows="4" placeholder="Tell us about your event..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div>© 2025 The Mehfil Makers — All Rights Reserved</div>
+  <div class="muted">Designed by The Mehfil Makers</div>
+</footer>
+
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/918799894801" target="_blank">💬</a>
+
+</body>
+</html>
