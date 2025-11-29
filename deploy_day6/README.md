@@ -1,4 +1,4 @@
-# 🚀 Day 8 — Web App Deployment Automation (Nginx + Systemd)
+# 🚀 Day 6 — Web App Deployment Automation (Nginx + Systemd)
 
 This project automates the deployment of a web application using:
 
